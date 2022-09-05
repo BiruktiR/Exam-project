@@ -12,14 +12,21 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { useRef, useState, useEffect, useContext } from 'react';
+import '../Pages/Adimn/index';
+import '../Pages/Employee/index';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const Login = () => {
+// const Login = () => {
  // const { setAuth } = useContext(AuthContext);
+
+const theme = createTheme();
+
+export default function SignIn() {
+
   const userRef = useRef();
   const errRef = useRef();
 
-  const [Email, setEmail] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errMsg, setErrMsg] = useState('');
   const [success, setSuccess] = useState(false);
@@ -34,19 +41,37 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
       e.preventDefault();
-const theme = createTheme();
+      console.log(email ,password);
+      setEmail('');
+      setPassword('');
+      setSuccess(true);
+  }
 
-export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   console.log({
+  //     email: data.get('email'),
+  //     password: data.get('password'),
+  //   });
+  // };
 
   return (
+    <>
+    {success ? (
+        <section>
+            <h1>You are logged in!</h1>
+            <br />
+            <p>
+                <a href="../Pages/Employee/index.js">Go to Employee</a>
+            </p>
+            <br/>
+            <p>
+            <a href="../Pages/Adimn/index.js">Go to Admin</a>
+            </p>
+        </section>
+    ) : (
   <section>
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -74,7 +99,12 @@ export default function SignIn() {
               label="Email Address"
               name="email"
               autoComplete="email"
+              ref={userRef}
               autoFocus
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            
+             
             />
             <TextField
               margin="normal"
@@ -109,12 +139,13 @@ export default function SignIn() {
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
-            </Grid> */}
+              </Grid> */}
           </Box>
         </Box>
         {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
       </Container>
     </ThemeProvider>
     </section>
-  );
-}
+    )}
+    </>
+  )}
