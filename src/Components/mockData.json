@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "fullName": "Jenny Chan",
+      "email": "  jemm@gmail.com",
+      "phone": "0978343454",
+      "gender": "female",
+      "address": " Addis Ababa"
+
+    },
+    {
+      "id": 2,
+      "fullName": "Jessica warren",
+      "email": "jeck@gmail.com",
+      "phone": "09342348",
+      "gender": "female",
+      "address": " Addis Ababa"
+    },
+    {
+      "id": 3,
+      "fullName": "Tony Frank",
+      "email": "tony@gmial.com",
+      "phone": "0934533457",
+      "gender": "male",
+      "address": " Addis Ababa"
+    },
+    {
+      "id": 4,
+      "fullName": "Jeremy Clark",
+      "email": "Alamd@gmail.com",
+      "phone": "094534585",
+      "gender": "female",
+      "address": " Addis Ababa"
+    },
+    {
+      "id": 5,
+      "fullName": "Raymond Edwards",
+      "email": "Dlart@gmail.com",
+      "phone": "0988453432",
+      "gender": "male",
+      "address": " Addis Ababa"
+    }
+  ]
